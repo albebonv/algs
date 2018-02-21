@@ -15,7 +15,7 @@ load css and enjoy
 
 
 ## Usage
-see [demo.html](demo.html)
+see [demo.html](https://albebonv.github.io/algs/)
 
 
 ## License
