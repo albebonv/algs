@@ -1,0 +1,158 @@
+/*!
+ * AGS - Another Grid System demo classes
+ * Copyright (c) 2018 level (www.leveldesign.it)
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ */
+/* demo classes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  background: #FFF;
+  color: rgba(34, 34, 34, 0.85);
+  overflow: auto;
+}
+a {
+  color: #098;
+}
+.container,
+main,
+h1,
+h2 {
+  max-width: 1201px;
+  padding: 32px;
+  margin: 0 auto;
+}
+main {
+  padding: 0 32px;
+  margin: 3em auto;
+}
+ul {
+  margin: 0;
+}
+h1 {
+  font-size: 2.4em;
+  font-weight: 600;
+  margin: 0 auto;
+  padding: 32px;
+}
+h1 small {
+  display: block;
+  font-size: 0.6em;
+}
+h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 1.5em auto 0 auto;
+  cursor: pointer;
+  padding: 32px;
+}
+h2 small {
+  font-size: 0.6em;
+  font-weight: 400;
+  display: block;
+  font-family: monospace;
+}
+header,
+section {
+  background: #098 linear-gradient(120deg, #1976D2, #098, #4CAF50);
+  color: #ffffff;
+}
+section .col {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+section .col:after {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  bottom: 0.5em;
+  left: 0.5em;
+  content: attr(class);
+  background-color: rgba(255, 255, 255, 0.2);
+  display: block;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  text-overflow: ellipsis;
+}
+section .col:hover {
+  z-index: 1;
+}
+section .col:hover:after {
+  background-color: #FC2;
+  color: #222;
+  box-shadow: 0 0 0.5em rgba(34, 34, 34, 0.4) !important;
+}
+section .col:before {
+  content: " | ";
+  opacity: 0;
+  display: block;
+  padding: 0.5em 0 0.16666667em 0;
+}
+section .col > div {
+  padding: 0 0.5em 0.5em 0.5em;
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section .grid.g-2 .col:after {
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+  left: 1em;
+}
+section .grid.g-1-2 .col:after {
+  top: 0.25em;
+  right: 0.25em;
+  bottom: 0.25em;
+  left: 0.25em;
+}
+section .grid.g-0 .col:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.btn {
+  font-size: 1.4em;
+  display: block;
+  color: #222;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  background-color: rgba(34, 34, 34, 0.1);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+.btn + .btn {
+  margin-top: 1em;
+}
+.btn:hover {
+  background-color: rgba(34, 34, 34, 0.05);
+}
+.btn.accent {
+  background-color: #FC2;
+}
+.btn.accent:hover {
+  background-color: rgba(255, 204, 34, 0.8);
+}

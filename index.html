@@ -1,0 +1,722 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>ALGS - Another Less Grid System</title>
+	<link rel="stylesheet" href="algs.min.css">
+	<link rel="stylesheet" href="demo.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			function copyToClipboard(txt) {
+				var $temp = $('<input>');
+				$('body').append($temp);
+				$temp.val(txt).select();
+				document.execCommand('copy');
+				$temp.remove();
+			}
+			$('section .col').click(function () {
+				copyToClipboard($(this).attr('class'));
+			}).each(function(){
+				$(this).attr('title','click to copy column class \n['+$(this).attr('class')+']');
+			});
+			$('h2').click(function () {
+				copyToClipboard($(this).next('section').find('.grid').attr('class'));
+			}).each(function(){
+				$(this).attr('title','click to copy grid class \n['+$(this).next('section').find('.grid').attr('class')+']');
+			});
+		});
+	</script>
+</head>
+<body>
+<header>
+	<h1>
+		ALGS
+		<small>Another Less Grid System</small>
+	</h1>
+</header>
+<main>
+	<div class="grid">
+		<div class="col sm-col-1-2 lg-col-2-3">
+			<ul>
+				<li>mobile first</li>
+				<li>responsive</li>
+				<li>easy customization</li>
+				<li>auto clear rows</li>
+				<li>lightweight (2.4KB gzipped)</li>
+				<li>ie9+ compatible (ie6-8 with <a href="https://github.com/scottjehl/Respond" target="_blank">Respond.js</a>)</li>
+			</ul>
+		</div>
+		<div class="col sm-col-1-2 lg-col-1-3">
+			<a class="btn" href="https://github.com/albebonv/algs">GitHub</a>
+			<a class="btn accent" href="https://raw.githubusercontent.com/albebonv/algs/master/algs.min.css">Download</a>
+		</div>
+	</div>
+</main>
+<h2>
+	Default grid
+	<small>&lt;div class="grid"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid">
+			<div class="col"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-2"></div>
+			<div class="col col-1-2"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Double gutter grid
+	<small>&lt;div class="grid g-2"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid g-2">
+			<div class="col"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-2"></div>
+			<div class="col col-1-2"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid g-2">
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Half gutter grid
+	<small>&lt;div class="grid g-1-2"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid g-1-2">
+			<div class="col"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-2"></div>
+			<div class="col col-1-2"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid g-1-2">
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	No gutter grid
+	<small>&lt;div class="grid g-0"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid g-0">
+			<div class="col"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-2"></div>
+			<div class="col col-1-2"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid g-0">
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+			<div class="col col-1-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Default grid auto clear
+	<small>&lt;div class="grid auto-clear"&gt; </small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid auto-clear">
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div><div>#9 text line</div><div>#10 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div><div>#9 text line</div><div>#10 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div><div>#9 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div><div>#9 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div><div>#9 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div></div>
+			</div>
+			<div class="col col-1-2 sm-col-1-3 md-col-1-4 lg-col-1-6 xl-col-1-8">
+				<div><div>#1 text line</div><div>#2 text line</div></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Responsive classes
+	<small>default = 2, 3, 4, 5, 6, 8, 12 columns</small>
+	<small>prefix xs-* = @media (max-width: 450px) 2, 3 and 4 columns</small>
+	<small>prefix sm-* = @media (min-width: 451px) 2, 3, 4 and 5 columns</small>
+	<small>prefix md-* = @media (min-width: 769px) 2, 3, 4, 5 and 6 columns</small>
+	<small>prefix lg-* = @media (min-width: 993px) 2, 3, 4, 5, 6, 8, 12 columns</small>
+	<small>prefix xl-* = @media (min-width: 1201px) 2, 3, 4, 5, 6, 8, 12 columns</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid">
+			<div class="col col-1-2 sm-col-1-3 xs-col-1-2"></div>
+			<div class="col col-1-2 sm-col-1-3 xs-col-1-2"></div>
+			<div class="col col-1-2 sm-col-1-3 xs-col-1-3"></div>
+			<div class="col col-1-2 sm-col xs-col-1-3"></div>
+			<div class="col col-1-2 sm-col-1-2 xs-col-1-3"></div>
+			<div class="col col-1-2 sm-col-1-2 xs-col"></div>
+		</div>
+	</div>
+</section>
+
+<h2>Multiple column width</h2>
+<section>
+	<div class="container">
+		<div class="grid">
+			<div class="col col-1-3"></div>
+			<div class="col col-2-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-3"></div>
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4"></div>
+			<div class="col col-3-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-4"></div>
+			<div class="col col-2-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-3-4"></div>
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5"></div>
+			<div class="col col-4-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-5"></div>
+			<div class="col col-3-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-3-5"></div>
+			<div class="col col-2-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-4-5"></div>
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6"></div>
+			<div class="col col-5-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-6"></div>
+			<div class="col col-4-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-3-6"></div>
+			<div class="col col-3-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-4-6"></div>
+			<div class="col col-2-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-5-6"></div>
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8"></div>
+			<div class="col col-7-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-8"></div>
+			<div class="col col-6-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-3-8"></div>
+			<div class="col col-5-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-4-8"></div>
+			<div class="col col-4-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-5-8"></div>
+			<div class="col col-3-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-6-8"></div>
+			<div class="col col-2-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-7-8"></div>
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12"></div>
+			<div class="col col-11-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-2-12"></div>
+			<div class="col col-10-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-3-12"></div>
+			<div class="col col-9-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-4-12"></div>
+			<div class="col col-8-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-5-12"></div>
+			<div class="col col-7-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-6-12"></div>
+			<div class="col col-6-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-7-12"></div>
+			<div class="col col-5-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-8-12"></div>
+			<div class="col col-4-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-9-12"></div>
+			<div class="col col-3-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-10-12"></div>
+			<div class="col col-2-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-11-12"></div>
+			<div class="col col-1-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Column offset
+	<small>.col-off-*-*</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid">
+			<div class="col col-1-2"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-2 col-off-1-2"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-3 col-off-1-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-3 col-off-2-3"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4 col-off-1-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4 col-off-2-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-4 col-off-3-4"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5 col-off-1-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5 col-off-2-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5 col-off-3-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-5 col-off-4-5"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6 col-off-1-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6 col-off-2-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6 col-off-3-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6 col-off-4-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-6 col-off-5-6"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-1-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-2-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-3-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-4-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-5-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-6-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-8 col-off-7-8"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-1-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-2-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-3-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-4-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-5-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-6-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-7-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-8-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-9-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-10-12"></div>
+		</div>
+		<div class="grid">
+			<div class="col col-1-12 col-off-11-12"></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Flex columns
+	<small>&lt;div class="grid flex"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid flex">
+			<div class="col col-1-5"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div></div>
+			<div class="col col-1-5"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div></div>
+			<div class="col col-1-5"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div></div>
+		</div>
+	</div>
+</section>
+
+<h2>
+	Flex columns stretch
+	<small>&lt;div class="grid flex stretch"&gt;</small>
+</h2>
+<section>
+	<div class="container">
+		<div class="grid flex stretch">
+			<div class="col col-1-4"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div></div>
+			<div class="col col-1-4"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div><div>#5 text line</div><div>#6 text line</div><div>#7 text line</div><div>#8 text line</div></div></div>
+			<div class="col col-1-4"><div><div>#1 text line</div><div>#2 text line</div><div>#3 text line</div><div>#4 text line</div></div></div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="container">
+		&copy;2018 <a href="https://www.leveldesign.it">level</a> - This project is licensed under the MIT License
+	</div>
+</footer>
+</body>
+</html>

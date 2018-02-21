@@ -1,0 +1,59 @@
+/*!
+ * AGS - Another Grid System demo classes
+ * Copyright (c) 2018 level (www.leveldesign.it)
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ */
+
+/* demo classes */
+@font-size    : 16px;
+@background   : #FFF;
+@color        : #222;
+@s-background : #098;
+@s-color      : contrast(@s-background);
+@accent       : #FC2;
+@gutter       : 1em;
+html , body { margin: 0; padding: 0; width: 100%; height: 100%; }
+body { font-size: @font-size; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif; font-weight: 400; text-align: left; background: @background; color: fade(@color,85%); overflow: auto; }
+a { color: @s-background; }
+.container , main , h1 , h2 { max-width: 1201px; padding: @font-size*2; margin: 0 auto; }
+main { padding: 0 @font-size*2; margin: 3em auto; }
+ul { margin: 0; }
+h1 {
+	font-size: 2.4em; font-weight: 600; margin: 0 auto; padding: @font-size*2;
+	small { display: block; font-size: 0.6em; }
+}
+h2 {
+	font-size: 1.8em; font-weight: 600; margin: 1.5em auto 0 auto; cursor: pointer; padding: @font-size*2;
+	small { font-size: 0.6em; font-weight: 400; display: block; font-family: monospace; }
+}
+header , section { background: @s-background linear-gradient(120deg, #1976D2, @s-background, #4CAF50); color: @s-color; }
+section {
+	.col {
+		position: relative; text-align: center; cursor: pointer;
+		&:after {
+			position: absolute; top: @gutter/2; right: @gutter/2; bottom: @gutter/2; left: @gutter/2;
+			content: attr(class); background-color: fade(@s-color,20%); display: block; border-radius: @gutter/2;
+			padding: @gutter/2; font-size: 14px; white-space: nowrap; overflow: hidden; color: fade(@s-color,50%);
+			transition: background-color .5s ease , color .5s ease, box-shadow .5s ease; text-overflow: ellipsis;
+		}
+		&:hover {
+			z-index: 1;
+			&:after { background-color: @accent; color: @color; box-shadow: 0 0 @gutter/2 fade(@color,40%) !important; }
+		}
+		&:before { content: " | "; opacity: 0; display: block; padding: @gutter/2 0 @gutter/6 0; }
+		> div { padding: 0 @gutter/2 @gutter/2 @gutter/2; opacity: 0.5; position: relative; z-index: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	}
+	.grid.g-2 .col:after { top: @gutter; right: @gutter; bottom: @gutter; left: @gutter; }
+	.grid.g-1-2 .col:after { top: @gutter/4; right: @gutter/4; bottom: @gutter/4; left: @gutter/4; }
+	.grid.g-0 .col:after { top: 0; right: 0; bottom: 0; left: 0; border-radius: 0; box-shadow: inset 0 0 0 1px fade(@s-color,10%); }
+}
+.btn {
+	font-size: 1.4em; display: block; color: @color; border-radius: @gutter/2; padding: 0.5em; background-color: fade(@color,10%);
+	font-weight: 600; text-decoration: none; text-align: center; transition: background-color .5s ease;
+	& + & { margin-top: 1em; }
+	&:hover { background-color: fade(@color,5%); }
+	&.accent {
+		background-color: @accent;
+		&:hover { background-color: fade(@accent,80%); }
+	}
+}
