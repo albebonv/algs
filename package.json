@@ -1,0 +1,12 @@
+{
+  "name": "algs",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "uglifycss": "0.0.28",
+    "less": "^3.0.1"
+  },
+  "scripts": {
+    "build": "lessc src/algs.less dist/algs.css && uglifycss dist/algs.css > dist/algs.min.css"
+  }
+}
