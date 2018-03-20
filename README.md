@@ -17,6 +17,9 @@ load css and enjoy
 ## Usage
 see [demo](https://albebonv.github.io/algs/)
 
+## Compiling from source
+run `npm install` then `npm run build`
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
